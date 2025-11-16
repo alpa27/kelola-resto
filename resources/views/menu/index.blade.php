@@ -41,9 +41,6 @@
                             <td>{{ $menu->created_at->format('d/m/Y H:i') }}</td>
                             <td>
                                 <div class="btn-group" role="group">
-                                    <a href="{{ route('menu.show', $menu) }}" class="btn btn-info btn-sm">
-                                        <i class="fas fa-eye"></i>
-                                    </a>
                                     <a href="{{ route('menu.edit', $menu) }}" class="btn btn-warning btn-sm">
                                         <i class="fas fa-edit"></i>
                                     </a>

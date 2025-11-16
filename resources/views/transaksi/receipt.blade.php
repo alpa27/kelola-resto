@@ -7,7 +7,7 @@
         body { font-family: DejaVu Sans, sans-serif; font-size: 12px; color: #111; }
         .container { width: 100%; padding: 8px; }
         .header { text-align: center; margin-bottom: 8px; }
-        .header h3 { margin: 0; color: #0d6efd; }
+        .header h3 { margin: 0; color: black; }
         .meta { margin: 8px 0; }
         .meta table { width: 100%; }
         .meta td { vertical-align: top; padding: 2px 0; }

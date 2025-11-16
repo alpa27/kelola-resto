@@ -5,199 +5,173 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Laporan {{ ucfirst($report_type) }}</title>
     <style>
-        body {
-            font-family: 'DejaVu Sans', sans-serif;
-            font-size: 12px; 
-            line-height: 1.4;
-            color: #333;
-            margin: 0;
-            padding: 20px;
-            background: linear-gradient(135deg, #e3f2fd 0%, #f8f9fa 100%);
-        }
-        
-        .header {
-            text-align: center;
-            margin-bottom: 30px;
-            background: linear-gradient(135deg, #87ceeb 0%, #b0e0e6 100%);
-            padding: 20px;
-            border-radius: 10px;
-            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-        }
-        
-        .header h1 {
-            color: #2c5aa0;
-            font-size: 28px;
-            margin: 0 0 10px 0;
-            font-weight: bold;
-            text-shadow: 1px 1px 2px rgba(0,0,0,0.1);
-        }
-        
-        .header h2 {
-            color: #4a6fa5;
-            font-size: 18px;
-            margin: 0;
-            font-weight: normal;
-        }
-        
-        .info-section {
-            background: linear-gradient(135deg, #f0f8ff 0%, #e6f3ff 100%);
-            padding: 15px;
-            border-radius: 8px;
-            margin-bottom: 20px;
-            border: 1px solid #b0d4f1;
-            box-shadow: 0 2px 4px rgba(0,0,0,0.05);
-        }
-        
-        .info-row {
-            display: flex;
-            justify-content: space-between;
-            margin-bottom: 8px;
-        }
-        
-        .info-label {
-            font-weight: bold;
-            color: #2c5aa0;
-        }
-        
-        .info-value {
-            color: #333;
-        }
-        
-        .summary-section {
-            background: linear-gradient(135deg, #e3f2fd 0%, #bbdefb 100%);
-            padding: 20px;
-            border-radius: 10px;
-            margin-bottom: 20px;
-            border: 1px solid #90caf9;
-            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-        }
-        
-        .summary-title {
-            font-size: 18px;
-            font-weight: bold;
-            color: #1565c0;
-            margin-bottom: 15px;
-            text-align: center;
-        }
-        
-        .summary-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: 15px;
-        }
-        
-        .summary-item {
-            text-align: center;
-            padding: 15px;
-            background: linear-gradient(135deg, #ffffff 0%, #f8f9fa 100%);
-            border-radius: 8px;
-            box-shadow: 0 3px 6px rgba(0,0,0,0.1);
-            border: 1px solid #e3f2fd;
-        }
-        
-        .summary-value {
-            font-size: 20px;
-            font-weight: bold;
-            color: #1976d2;
-        }
-        
-        .summary-label {
-            font-size: 12px;
-            color: #666;
-            margin-top: 5px;
-        }
-        
-        table {
-            width: 100%;
-            border-collapse: collapse;
-            margin-bottom: 20px;
-            background-color: white;
-            border-radius: 8px;
-            overflow: hidden;
-            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-        }
-        
-        th {
-            background: linear-gradient(135deg, #87ceeb 0%, #5dade2 100%);
-            color: #2c5aa0;
-            padding: 12px 8px;
-            text-align: left;
-            font-weight: bold;
-            font-size: 11px;
-            text-shadow: 1px 1px 1px rgba(0,0,0,0.1);
-        }
-        
-        td {
-            padding: 10px 8px;
-            border-bottom: 1px solid #e3f2fd;
-            font-size: 11px;
-        }
-        
-        tr:nth-child(even) {
-            background-color: #f8f9fa;
-        }
-        
-        tr:nth-child(odd) {
-            background-color: #ffffff;
-        }
-        
-        .text-right {
-            text-align: right;
-        }
-        
-        .text-center {
-            text-align: center;
-        }
-        
-        .badge {
-            display: inline-block;
-            padding: 4px 8px;
-            border-radius: 4px;
-            font-size: 10px;
-            font-weight: bold;
-        }
-        
-        .badge-primary {
-            background: linear-gradient(135deg, #87ceeb 0%, #5dade2 100%);
-            color: #2c5aa0;
-        }
-        
-        .badge-success {
-            background: linear-gradient(135deg, #a8e6cf 0%, #7fcdcd 100%);
-            color: #2d5016;
-        }
-        
-        .badge-info {
-            background: linear-gradient(135deg, #b0e0e6 0%, #87ceeb 100%);
-            color: #2c5aa0;
-        }
-        
-        .footer {
-            margin-top: 30px;
-            text-align: center;
-            font-size: 10px;
-            color: #666;
-            border-top: 2px solid #87ceeb;
-            padding-top: 15px;
-            background: linear-gradient(135deg, #f0f8ff 0%, #e6f3ff 100%);
-            padding: 15px;
-            border-radius: 8px;
-        }
-        
-        .no-data {
-            text-align: center;
-            color: #666;
-            font-style: italic;
-            padding: 40px;
-            background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
-            border-radius: 8px;
-            border: 1px solid #dee2e6;
-        }
-        
-        .page-break {
-            page-break-before: always;
-        }
-    </style>
+    body {
+        font-family: 'DejaVu Sans', sans-serif;
+        font-size: 12px;
+        line-height: 1.4;
+        color: #000;
+        margin: 0;
+        padding: 20px;
+        background: #fff;
+    }
+
+    .header {
+        text-align: center;
+        margin-bottom: 30px;
+        background: #f2f2f2;
+        padding: 20px;
+        border: 1px solid #ccc;
+    }
+
+    .header h1 {
+        color: #000;
+        font-size: 28px;
+        margin: 0 0 10px 0;
+        font-weight: bold;
+    }
+
+    .header h2 {
+        color: #333;
+        font-size: 18px;
+        margin: 0;
+    }
+
+    .info-section {
+        background: #f9f9f9;
+        padding: 15px;
+        border-radius: 5px;
+        margin-bottom: 20px;
+        border: 1px solid #ccc;
+    }
+
+    .info-row {
+        display: flex;
+        justify-content: space-between;
+        margin-bottom: 8px;
+    }
+
+    .info-label {
+        font-weight: bold;
+        color: #000;
+    }
+
+    .info-value {
+        color: #333;
+    }
+
+    .summary-section {
+        background: #f7f7f7;
+        padding: 20px;
+        border-radius: 5px;
+        margin-bottom: 20px;
+        border: 1px solid #ccc;
+    }
+
+    .summary-title {
+        font-size: 18px;
+        font-weight: bold;
+        color: #000;
+        margin-bottom: 15px;
+        text-align: center;
+    }
+
+    .summary-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+        gap: 15px;
+    }
+
+    .summary-item {
+        text-align: center;
+        padding: 15px;
+        background: #fff;
+        border-radius: 5px;
+        border: 1px solid #ccc;
+    }
+
+    .summary-value {
+        font-size: 20px;
+        font-weight: bold;
+        color: #000;
+    }
+
+    .summary-label {
+        font-size: 12px;
+        color: #333;
+        margin-top: 5px;
+    }
+
+    table {
+        width: 100%;
+        border-collapse: collapse;
+        margin-bottom: 20px;
+        background-color: white;
+        border: 1px solid #ccc;
+    }
+
+    th {
+        background: #000;
+        color: #fff;
+        padding: 10px;
+        text-align: left;
+        font-weight: bold;
+        font-size: 11px;
+    }
+
+    td {
+        padding: 8px;
+        border-bottom: 1px solid #ddd;
+        font-size: 11px;
+        color: #000;
+    }
+
+    tr:nth-child(even) {
+        background-color: #f9f9f9;
+    }
+
+    tr:nth-child(odd) {
+        background-color: #fff;
+    }
+
+    .text-right { text-align: right; }
+    .text-center { text-align: center; }
+
+    .badge {
+        display: inline-block;
+        padding: 3px 6px;
+        border-radius: 3px;
+        font-size: 10px;
+        font-weight: bold;
+        background: #000;
+        color: #fff;
+    }
+
+    .footer {
+        margin-top: 30px;
+        text-align: center;
+        font-size: 10px;
+        color: #333;
+        border-top: 1px solid #ccc;
+        padding-top: 15px;
+        background: #f2f2f2;
+        padding: 15px;
+    }
+
+    .no-data {
+        text-align: center;
+        color: #555;
+        font-style: italic;
+        padding: 40px;
+        background: #f7f7f7;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+    }
+
+    .page-break {
+        page-break-before: always;
+    }
+</style>
+
 </head>
 <body>
     <div class="header">
@@ -362,7 +336,7 @@
 
         @if($menu_populer->count() > 0)
             <div class="page-break"></div>
-            <h3 style="color: #2196f3; margin-bottom: 15px;">🍽️ Menu Terpopuler</h3>
+            <h3 style="color: black; margin-bottom: 15px;">🍽️ Menu Terpopuler</h3>
             <table>
                 <thead>
                     <tr>
@@ -388,7 +362,7 @@
         @endif
         @if(isset($transaksis) && $transaksis->count() > 0)
             <div class="page-break"></div>
-            <h3 style="color: #2196f3; margin-bottom: 15px;">💰 Laporan Transaksi</h3>
+            <h3 style="color: black; margin-bottom: 15px;">💰 Laporan Transaksi</h3>
             <table>
                 <thead>
                     <tr>

@@ -33,33 +33,4 @@
         </div>
     </div>
 
-    <div class="col-md-6">
-        <div class="card shadow mb-4">
-            <div class="card-header">
-                <h5 class="card-title mb-0">
-                    <i class="fas fa-star me-2"></i>
-                    Menu Populer
-                </h5>
-            </div>
-            <div class="card-body">
-                @if(isset($data['menu_populer']) && $data['menu_populer']->count() > 0)
-                    <div class="list-group list-group-flush">
-                        @foreach($data['menu_populer'] as $index => $menu)
-                        <div class="list-group-item d-flex justify-content-between align-items-center">
-                            <div>
-                                <strong>{{ $menu->menu->namamenu }}</strong>
-                            </div>
-                            <span class="badge bg-primary rounded-pill">{{ $menu->total_terjual }}</span>
-                        </div>
-                        @endforeach
-                    </div>
-                @else
-                    <div class="text-center py-3">
-                        <i class="fas fa-star fa-2x text-muted mb-2"></i>
-                        <h6 class="text-muted">Tidak ada data menu populer</h6>
-                    </div>
-                @endif
-            </div>
-        </div>
-    </div>
-</div>
+    
